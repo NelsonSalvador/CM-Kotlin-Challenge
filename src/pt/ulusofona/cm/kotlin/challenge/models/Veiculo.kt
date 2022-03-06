@@ -1,4 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.models
+import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 import kotlin.collections.*
@@ -15,9 +16,14 @@ open class Veiculo(private val _identificador: String): Movimentavel {
     }
 
     override fun moverPara(x: Int, y: Int) {
-        TODO("Not yet implemented")
+        if(posicao.x == x && posicao.y == y) {
+            throw AlterarPosicaoException()
+        }
         posicao.x = x
         posicao.y = y
+    }
+    override fun toString(): String{
+        return "Veiculo | $identificador"
     }
 
 }
