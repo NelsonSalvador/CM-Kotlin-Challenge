@@ -5,6 +5,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
+
 data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel {
     var veiculos = mutableListOf<Veiculo>()
     var carta: Carta? = null
@@ -20,7 +21,12 @@ data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel {
 
     override fun toString(): String{
         val bar: String = "|"
-        return "Pessoa $bar $nome $bar $dataDeNascimento $bar $posicao"
+
+        val cal = Calendar.getInstance()
+        cal.time = dataDeNascimento
+       //val formatted = year.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"))
+
+        return "Pessoa $bar $nome $bar ${cal.get(Calendar.DAY_OF_MONTH)}-${cal.get(Calendar.MONTH).toInt() + 1}-${cal.get(Calendar.YEAR)} $bar $posicao"
     }
     fun comprarVeiculo(veiculo: Veiculo){
 
