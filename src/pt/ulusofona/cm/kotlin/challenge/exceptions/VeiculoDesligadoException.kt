@@ -1,4 +1,4 @@
 package pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions
 
-class VeiculoDesligadoException {
+class VeiculoDesligadoException(override val message: String = "Desligado exeption"): Exception(message) {
 }
