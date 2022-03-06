@@ -2,6 +2,7 @@ package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoDesligadoException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
@@ -21,7 +22,7 @@ data class Carro(private val _identificador: String, val motor: Motor): Veiculo(
 
     override fun ligar() {
 
-        if(motor.ligado) throw VeiculoDesligadoException()
+        if(motor.ligado) throw VeiculoLigadoException()
 
         motor.ligado = true
     }

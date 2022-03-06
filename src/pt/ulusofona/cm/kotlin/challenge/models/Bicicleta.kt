@@ -6,7 +6,9 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 data class Bicicleta(private val _identificador: String): Veiculo(_identificador), Movimentavel {
 
     override val identificador get() = _identificador
-
+    override fun requerCarta(): Boolean {
+        return false
+    }
     override fun moverPara(x: Int, y: Int) {
         if(posicao.x == x && posicao.y == y) {
             throw AlterarPosicaoException()

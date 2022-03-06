@@ -55,7 +55,8 @@ data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel {
             {
                 if(veiculo.posicao.x == x && veiculo.posicao.y == y) throw AlterarPosicaoException()
 
-                if (!temCarta() && veiculo is Carro) throw PessoaSemCartaException()
+                if (!temCarta() && veiculo is Carro) throw PessoaSemCartaException("$nome não tem carta para " +
+                        "conduzir o veículo indicado")
 
                 return veiculo.posicao.alterarPosicaoPara(x, y)
             }
