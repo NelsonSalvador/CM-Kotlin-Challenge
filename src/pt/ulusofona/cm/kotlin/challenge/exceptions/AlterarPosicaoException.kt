@@ -1,4 +1,4 @@
-package pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions
+package pt.ulusofona.cm.kotlin.challenge.exceptions
 
 class AlterarPosicaoException(override val message: String = "posicao exeption"): Exception(message) {
 }

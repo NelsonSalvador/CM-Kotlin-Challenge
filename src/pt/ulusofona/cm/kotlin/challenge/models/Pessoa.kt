@@ -1,12 +1,11 @@
-package pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.models
-import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
-import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
-import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
-import pt.ulusofona.cm.kotlin.challenge.pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
+package pt.ulusofona.cm.kotlin.challenge.models
+import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
-import kotlin.collections.*
 
-data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel{
+data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel {
     var veiculos = mutableListOf<Veiculo>()
     var carta: Carta? = null
     var posicao: Posicao = Posicao()
@@ -28,7 +27,7 @@ data class Pessoa (val nome: String,val dataDeNascimento: Date): Movimentavel{
         veiculos.add(veiculo)
     }
 
-    fun pesquisarVeiculo(identificador: String): Veiculo{
+    fun pesquisarVeiculo(identificador: String): Veiculo {
         //Finish fun
         for(veiculo in veiculos){
             if(veiculo.identificador == identificador){
